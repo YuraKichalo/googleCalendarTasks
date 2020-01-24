@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.field {
+    width: 80%;
+    margin: 0!important;
+}
+
+.button {
+    width: 16%;
+}
+
+.items {
+    padding: 0;
+}
+
+.content {
+    display: flex!important;
+    align-items: center;
+    font-size: 20px!important;
+}
+
+
