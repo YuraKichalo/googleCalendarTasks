@@ -41,7 +41,7 @@ const TodoListInput: React.FC = observer(() => {
                     onChange={onInputChange}
                     ref={inputTextRef}
                 />
-                <div>{renderError()}</div>
+                {renderError()}
             </div>
         );
     };
@@ -49,7 +49,7 @@ const TodoListInput: React.FC = observer(() => {
     return (
         <form className='ui form' onSubmit={onFormSubmit}>
             {renderInput()}
-            <button className='ui button' type='submit'>Add</button>
+            <button className='ui button input-btn' type='submit'>Add</button>
         </form>
     )
 });

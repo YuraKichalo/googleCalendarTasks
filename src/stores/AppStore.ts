@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import {observable, action, computed} from "mobx";
 
 class AppStore {
     @observable tasks: {id: number, title: string}[] = [
@@ -20,7 +20,7 @@ class AppStore {
     @action addTask = (task: string): void => {
         const tasks = this.tasks;
         tasks.push({
-            id: this.tasks.length,
+            id: this.tasks.length + 1,
             title: task
         });
 

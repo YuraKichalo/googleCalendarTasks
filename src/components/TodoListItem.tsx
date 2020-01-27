@@ -11,9 +11,9 @@ interface TodoListProps {
 const TodoListItem: React.FC<TodoListProps> = observer(({ title, id }) => {
     return (
         <div className='item'>
-            <li className='middle aligned content'>{title}</li>
+            <li className='middle aligned content list-content'>{title}</li>
             <button onClick={() => store.removeTask(id)} className='ui red basic button'>remove</button>
-            <CalendarBtn />
+            <CalendarBtn title={title} id={id} />
         </div>
     )
 });

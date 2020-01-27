@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .field {
@@ -9,7 +10,7 @@
     margin: 0!important;
 }
 
-.button {
+.input-btn {
     width: 16%;
 }
 
@@ -17,10 +18,45 @@
     padding: 0;
 }
 
-.content {
+.list-content {
     display: flex!important;
     align-items: center;
     font-size: 20px!important;
+}
+
+.auth {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-header, .auth-description, .auth-content {
+    text-align: center;
+    margin: 5px;
+}
+
+.auth-content {
+    margin-top: 20px;
+}
+
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.modalInput {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.error {
+    display: flex!important;
+    justify-content: center;
 }
 
 

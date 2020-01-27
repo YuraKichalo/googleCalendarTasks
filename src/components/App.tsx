@@ -1,16 +1,21 @@
 import React from 'react';
 import { observer } from "mobx-react";
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import TodoList from "./TodoList";
-import TodoListInput from "./TodoListInput";
+import Auth from "./Auth.js";
+import Header from "./Header";
 
 
-const App: React.FC = observer(() => {
+const App: React.FC = observer((props) => {
   return (
-    <div className="ui container">
-        <TodoListInput />
-        <TodoList />
-    </div>
+    <BrowserRouter>
+        <div className="ui container">
+            <Header />
+            <Route exact path='/' component={Auth} />
+            <Route exact path='/list' component={TodoList} />
+        </div>
+    </BrowserRouter>
   );
 });
 
