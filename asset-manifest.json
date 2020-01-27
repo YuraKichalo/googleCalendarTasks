@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/googleCalendarTasks/static/css/main.385e5bb9.chunk.css",
+    "main.js": "/googleCalendarTasks/static/js/main.264e796f.chunk.js",
+    "main.js.map": "/googleCalendarTasks/static/js/main.264e796f.chunk.js.map",
+    "runtime-main.js": "/googleCalendarTasks/static/js/runtime-main.59d56d94.js",
+    "runtime-main.js.map": "/googleCalendarTasks/static/js/runtime-main.59d56d94.js.map",
+    "static/css/2.57125576.chunk.css": "/googleCalendarTasks/static/css/2.57125576.chunk.css",
+    "static/js/2.740a93da.chunk.js": "/googleCalendarTasks/static/js/2.740a93da.chunk.js",
+    "static/js/2.740a93da.chunk.js.map": "/googleCalendarTasks/static/js/2.740a93da.chunk.js.map",
+    "index.html": "/googleCalendarTasks/index.html",
+    "precache-manifest.e224b48b3c7df1b80d73a74aaf4dfe61.js": "/googleCalendarTasks/precache-manifest.e224b48b3c7df1b80d73a74aaf4dfe61.js",
+    "service-worker.js": "/googleCalendarTasks/service-worker.js",
+    "static/css/2.57125576.chunk.css.map": "/googleCalendarTasks/static/css/2.57125576.chunk.css.map",
+    "static/css/main.385e5bb9.chunk.css.map": "/googleCalendarTasks/static/css/main.385e5bb9.chunk.css.map",
+    "static/js/2.740a93da.chunk.js.LICENSE": "/googleCalendarTasks/static/js/2.740a93da.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59d56d94.js",
+    "static/css/2.57125576.chunk.css",
+    "static/js/2.740a93da.chunk.js",
+    "static/css/main.385e5bb9.chunk.css",
+    "static/js/main.264e796f.chunk.js"
+  ]
+}
