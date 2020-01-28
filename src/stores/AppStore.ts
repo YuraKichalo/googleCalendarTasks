@@ -2,11 +2,7 @@ import {observable, action} from "mobx";
 import { persist } from 'mobx-persist'
 
 class AppStore {
-    @persist('list') @observable tasks: {id: number, title: string}[] = [
-        {id: 0, title: 'learn TS'},
-        {id: 1, title: 'learn MOBX'},
-        {id: 2, title: 'learn new project'},
-    ];
+    @persist('list') @observable tasks: {id: number, title: string}[] = [];
 
     @persist @observable inputVal: string = '';
 
