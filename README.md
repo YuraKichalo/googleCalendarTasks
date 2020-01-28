@@ -1,2 +1,2 @@
-Try it here: [Demo](http://localhost:3000)
+Try it here: [Demo](http://google-calendar-tasks-yurakichalo.surge.sh/)
 
