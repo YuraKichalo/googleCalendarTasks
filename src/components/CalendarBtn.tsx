@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react";
 // @ts-ignore
 import ApiCalendar from 'react-google-calendar-api';
@@ -15,6 +15,7 @@ interface TodoListProps {
 }
 
 const CalendarBtn: React.FC<TodoListProps> = observer(({ title, id }) => {
+    const [dateError, setDateError] = useState('');
     const { startValue, endValue } = calendarStore;
     const { removeTask } = store;
 
@@ -28,23 +29,11 @@ const CalendarBtn: React.FC<TodoListProps> = observer(({ title, id }) => {
                 onClick={() => toggleCompleteModal()}
             />,
             <Modali.Button
-                label="YES"
+                label="Add"
                 isStyleDestructive
                 onClick={() => addTaskToCalendar()}
             />,
         ]
-    });
-
-    const [taskAlert, toggleTaskAlert] = useModali({
-        animated: true,
-        title: `Task "${title.toUpperCase()}" was added to your calendar`,
-        buttons: [
-            <Modali.Button
-                label="OK"
-                isStyleCancel
-                onClick={() => toggleTaskAlert()}
-            />
-        ],
     });
 
     const addTaskToCalendar = (): void => {
@@ -62,25 +51,29 @@ const CalendarBtn: React.FC<TodoListProps> = observer(({ title, id }) => {
 
         ApiCalendar.createEvent(event)
             .then((result: any) => {
-                console.log(result.result)
+                removeTask(id);
+                toggleCompleteModal();
             })
             .catch((error: any) => {
-                console.log(error)
+                setDateError(error.result.error.message);
             });
-
-        removeTask(id);
-        toggleCompleteModal();
     };
 
     const onBtnClick = (): void => {
         toggleCompleteModal();
     };
 
+    const renderErrorMessage = () => {
+        if (dateError) {
+            return <div className='dateError ui pointing red basic label'>{`Error: ${dateError}`}</div>
+        }
+    };
+
     return (
         <div>
-            <Modali.Modal {...taskAlert} />
             <Modali.Modal {...completeModal} >
                 <ModalInput />
+                {renderErrorMessage()}
             </Modali.Modal>
             <button onClick={onBtnClick} className='ui blue button'>Add to calendar</button>
         </div>

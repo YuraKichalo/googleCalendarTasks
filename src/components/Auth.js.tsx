@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// @ts-ignore
-import ApiCalendar from 'react-google-calendar-api';
 import { observer } from "mobx-react";
 
 import authStore from "../stores/AuthStore";

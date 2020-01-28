@@ -27,7 +27,6 @@ const AuthBtn: React.FC<AuthProps> = observer(({ history }) => {
          if (name === 'signIn') {
              ApiCalendar.handleAuthClick();
          } else {
-             console.log('sign OUT');
              ApiCalendar.handleSignoutClick();
              // @ts-ignore
              history.push('/');
