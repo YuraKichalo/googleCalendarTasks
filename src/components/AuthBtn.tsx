@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 // @ts-ignore
 import ApiCalendar from 'react-google-calendar-api';
 import { withRouter } from 'react-router-dom';
@@ -23,8 +23,6 @@ const AuthBtn: React.FC<AuthProps> = observer(({ history }) => {
         setIsSignIn(sign)
     };
 
-    console.log(`sign In status: ${isSignIn}`);
-
     const handleClick = (name: string): void => {
          if (name === 'signIn') {
              ApiCalendar.handleAuthClick();
@@ -37,7 +35,6 @@ const AuthBtn: React.FC<AuthProps> = observer(({ history }) => {
     };
 
     const renderBtn = () => {
-        console.log(`sign in status in BUTTON: ${isSignIn}`);
         if (isSignIn) {
             return (
                 <button onClick={() => handleClick('signOut')} className='ui button'>

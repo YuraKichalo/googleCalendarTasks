@@ -14,7 +14,6 @@ const Auth: React.FC<AuthProps> = observer(({ history }) => {
     const { isSignIn } = authStore;
 
     const handleClick = () => {
-        console.log(`Auth: ${ApiCalendar.sign}`);
         if (isSignIn) {
             // @ts-ignore
             history.push('/list');
