@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 // @ts-ignore
 import ApiCalendar from 'react-google-calendar-api';
 import { withRouter } from 'react-router-dom';
 import { observer } from "mobx-react";
+import MDSpinner from "react-md-spinner";
 
 import authStore from "../stores/AuthStore";
 
@@ -12,10 +13,13 @@ interface AuthProps {
 
 const AuthBtn: React.FC<AuthProps> = observer(({ history }) => {
     const { isSignIn, setIsSignIn } = authStore;
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         ApiCalendar.onLoad(() => {
-            ApiCalendar.listenSign(signUpdate)
+            setIsSignIn(ApiCalendar.sign);
+            setIsLoaded(true);
+            ApiCalendar.listenSign(signUpdate);
         });
     }, []);
 
@@ -50,7 +54,11 @@ const AuthBtn: React.FC<AuthProps> = observer(({ history }) => {
         }
     };
 
-    return renderBtn();
+    return (
+        <div>
+            {isLoaded ? renderBtn() : <MDSpinner />}
+        </div>
+    );
 });
 
 // @ts-ignore

@@ -1,5 +1,4 @@
 {
-  "homepage": " https://yurakichalo.github.io/googleCalendarTasks",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +13,7 @@
     "@types/react-router-dom": "^5.1.3",
     "gh-pages": "^2.2.0",
     "mobx": "^5.15.2",
+    "mobx-persist": "^0.4.1",
     "mobx-react": "^6.1.4",
     "modali": "^1.2.0",
     "moment": "^2.24.0",
@@ -21,13 +21,15 @@
     "react-datepicker2": "^3.0.14",
     "react-dom": "^16.12.0",
     "react-google-calendar-api": "^1.0.11",
+    "react-md-spinner": "^1.0.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "rename-index": "node -e \"require('fs').rename('./build/index.html', './build/200.html', (err) => { console.log(err ? err : 'File renamed!') })\"",
+    "predeploy": "npm run build && npm run rename-index",
+    "deploy": "surge --project ./build --domain google-Calendar-Tasks-YuraKichalo.surge.sh",
     "start": "node herocuConfig.js",
     "startScript": "react-scripts start",
     "build": "react-scripts build",
@@ -48,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "surge": "^0.21.3"
   }
 }
