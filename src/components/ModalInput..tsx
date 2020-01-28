@@ -9,7 +9,7 @@ import calendarStore from '../stores/CalendarStore';
 const ModalInput:React.FC = observer(() => {
     const {startValue, setStartValue, endValue, setEndValue} = calendarStore;
 
-    const handleChange = (val: any, name: string) => {
+    const handleChange = (val: any, name: string): void => {
         if (name === 'start') {
             setStartValue(val)
         } else {
@@ -24,6 +24,7 @@ const ModalInput:React.FC = observer(() => {
                 <DatePicker
                     value={startValue}
                     onChange={(value: any) => handleChange(value, 'start')}
+                    inputFormat="YYYY-M-D-LT"
                 />
             </label>
             <label>
@@ -31,6 +32,7 @@ const ModalInput:React.FC = observer(() => {
                 <DatePicker
                     value={endValue}
                     onChange={(value: any) => handleChange(value, 'end')}
+                    inputFormat="YYYY-M-D-LT"
                 />
             </label>
         </div>
